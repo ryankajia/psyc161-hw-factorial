@@ -10,7 +10,7 @@ On the example of a simple Python script/function establish
 practice of
 
 - interaction with [Git](http://git-scm.com) and [GitHub](http://github.com)
-- automated testing using [nose](https://nose.readthedocs.org)
+- automated testing using [py.test](https://docs.pytest.org/en/latest/)
 - code syntax conventions validation using [flake8](http://bitbucket.org/tarek/flake8)
 
 ## Problem to solve
@@ -25,14 +25,14 @@ run.
 
 **Solution**:
 
-1. Write recursive `factorial_recursive` to estimate factorial of an
-   integer n.
+1. Write `factorial` to estimate factorial of an
+   integer n (could be plain iteration or a recursive call).
    See [wikipedia](http://en.wikipedia.org/wiki/Factorial) if not sure
    about what factorial is
 
 ### "Extra credit"
 
-2. Write non-recursive version of a `factorial` function
+2. Write both recursive and non-recursive version of a `factorial` function
 
 3. Investigate difference (well - ratio) in time of execution between
    the two.  Use `time` module to track time.
@@ -45,7 +45,7 @@ run.
 
 - In the terminal now run
 
-        git clone https://github.com/YOURLOGIN/psyc161-hw1
+        git clone https://github.com/YOURLOGIN/psyc161-hw-factorial
 
     to "clone" your remote fork/clone to your local drive
 
@@ -54,13 +54,13 @@ run.
 - You are welcome to use any editor to edit the file, but we recommend
   starting to work with [PyCharm](https://www.jetbrains.com/pycharm)
 
-- Function `factorial_recursive` definition provides a skeleton for
+- Function `factorial` definition provides a skeleton for
   you to fill in (docstring + implementation)
 
 - Test `test_factorial()` implements basic checks already which you
   need to expand to degree you feel necessary to state with assurance
   that your implementation.  You can run all `tests_` present in the
-  file using `nosetests -s -v factorial.py` (run `man nosetests` in a
+  file using `python -m pytest -s -v factorial.py` (run `man pytest` in a
   terminal to check what options -s and -v are for.  Do you need them
   both really ATM?)
 
@@ -74,7 +74,7 @@ be done multiple times
 - Whenever you are ready to submit your homework, run `git push` to
   push your changes back to **your** clone on GitHub
 
-- Visit your GitHub page (http://github.com/YOURLOGIN/psyc161-hw1) and
+- Visit your GitHub page (http://github.com/YOURLOGIN/psyc161-hw-factorial) and
   find your changes being present among Commits, and "Send a pull
   request" option present.
 
@@ -83,7 +83,7 @@ be done multiple times
 
 - Review status of the pull request in a few minutes -- it should
   report successful pass through travis CI run which runs again
-  nosetests and flake8 on my behalf.  If not -- inspect travis's logs,
+  pytest and flake8 on my behalf.  If not -- inspect travis's logs,
   commit fixes locally, push them to github again so that PR gets
   updated, and travis gets another run.
 
